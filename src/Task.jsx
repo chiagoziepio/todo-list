@@ -1,18 +1,24 @@
 import React from 'react'
+import ListItems from './ListItems'
+import Input from './Input'
 
-const Task = ({tasks}) => {
+const Task = ({tasks,inputValue,handleSubmit,setInputValue}) => {
   return (
-    <>
+    <main>
+        <Input
+          inputValue={inputValue}
+          setInputValue={setInputValue}
+          handleSubmit={handleSubmit}
+        />
         <ul className="task-ul">
             {tasks.map(task =>(
-                <li key={task.id}>
-                    <span>{task.createdDate}</span>
-                    <p className="task-body">{task.body}</p>
-                </li>
+                <ListItems 
+                 task={task}
+                />
             ))}
 
         </ul>
-    </>
+    </main>
   )
 }
 

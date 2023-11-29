@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Input from './Input';
+
 import Header from './Header';
 import Footer from './Footer';
 import Task from './Task';
@@ -35,18 +35,16 @@ function App() {
     setInputValue("")
   }
   return (
-    <>
+    <div className='app'>
       <Header/>
-      <Input
+      <Task
+        tasks={tasks}
         inputValue={inputValue}
         setInputValue={setInputValue}
         handleSubmit={handleSubmit}
       />
-      <Task
-        tasks={tasks}
-      />
       <Footer/>
-    </>
+    </div>
   )
 }
 

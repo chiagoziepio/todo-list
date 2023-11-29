@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Input = ({inputValue,setInputValue,handleSubmit}) => {
+const Input = ({inputValue,setInputValue,handleSubmit,inputRef}) => {
   return (
     <>
         <form action="">
@@ -10,6 +10,8 @@ const Input = ({inputValue,setInputValue,handleSubmit}) => {
                 required
                 value={inputValue}
                 onChange={(e)=>setInputValue(e.target.value)}
+                ref={inputRef}
+                
             />
             <button type="submit" className="submit" onClick={handleSubmit}>+</button>
         </form>

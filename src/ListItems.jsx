@@ -21,7 +21,8 @@ const ListItems = ({task, handleChecked,isChecked, handleDelete}) => {
                  </p>
                 </div>
 
-                <span className='delete' onClick={handleDelete}>+</span>
+                <span className='delete' 
+                onClick={()=>handleDelete(task.id)}>+</span>
                
             </div>
         </li>

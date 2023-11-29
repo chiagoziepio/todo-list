@@ -2,13 +2,14 @@ import React from 'react'
 import ListItems from './ListItems'
 import Input from './Input'
 
-const Task = ({tasks,inputValue,handleSubmit,setInputValue, handleChecked,isChecked,handleDelete}) => {
+const Task = ({tasks,inputValue,handleSubmit,setInputValue, handleChecked,isChecked,handleDelete,inputRef}) => {
   return (
     <main>
         <Input
           inputValue={inputValue}
           setInputValue={setInputValue}
           handleSubmit={handleSubmit}
+          inputRef={inputRef}
         />
         <ul className="task-ul">
             {tasks.map(task =>(
@@ -18,6 +19,7 @@ const Task = ({tasks,inputValue,handleSubmit,setInputValue, handleChecked,isChec
                  handleChecked={handleChecked}
                  isChecked={isChecked}
                  handleDelete={handleDelete}
+                 
                 />
             ))}
 

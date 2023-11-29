@@ -4,36 +4,17 @@ import Header from './Header';
 import Footer from './Footer';
 import Task from './Task';
 import { format} from 'date-fns'
-import { FaRegCircle } from "react-icons/fa";
-import { FaRegCircleCheck } from "react-icons/fa6"
+
 
 function App() {
   const[isChecked, setISChecked]= useState(true)
-  const [tasks,setTasks]=useState([
-    {
-      id:1,
-      checked:isChecked,
-      createdDate: "28th November 2023",
-      body: "going to church",
-    },
-    {
-      id:2,
-      checked:isChecked,
-      createDdate: "28th November 2023",
-      body: "going to church",
-    },
-    {
-      id:3,
-      checked:isChecked,
-      createdDate: "28th November 2023",
-      body: "going to church",
-    }
-  ]);
+  const [tasks,setTasks]=useState([]);
   const[inputValue,setInputValue] = useState("")
   
- 
+ const inputRef = useRef(null)
   
   const handleSubmit = (e)=>{
+    
     e.preventDefault()
     const id = tasks.length ? tasks[tasks.length - 1].id + 1: 1;
     const createddate = format(new Date(), 'MMMM dd, yyyy pp');
@@ -42,6 +23,7 @@ function App() {
     const allTask = [...tasks, newtask]
     setTasks(allTask)
     setInputValue("")
+    
   }
   
   const handleChecked = (id)=>{
@@ -50,8 +32,9 @@ function App() {
     
     
   }
-  const handleDelete = ()=>{
-
+  const handleDelete = (id)=>{
+ const deletedTask = tasks.filter(task => task.id !== id);
+ setTasks(deletedTask)
   }
   return (
     <div className='app'>
@@ -64,6 +47,7 @@ function App() {
         handleChecked={handleChecked}
        isChecked={isChecked}
        handleDelete={handleDelete}
+       inputRef={inputRef}
         
       />
       <Footer

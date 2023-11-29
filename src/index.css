@@ -97,6 +97,12 @@ main ul li .task_body .delete{
     font-size: 30px;
     transform: rotate(45deg);
     color: #f875aa;
+    cursor: pointer;
+    transition: font-weight .3s ease;
+}
+main ul li .task_body .delete:hover{
+    
+    font-weight: 700;
 }
 main ul li span{
     opacity: 0.6;

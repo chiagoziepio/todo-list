@@ -30,14 +30,15 @@ function App() {
     }
   ]);
   const[inputValue,setInputValue] = useState("")
-  const [isUnchecked, setIsUnchecked] = useState(true)
+  
  
   
   const handleSubmit = (e)=>{
     e.preventDefault()
     const id = tasks.length ? tasks[tasks.length - 1].id + 1: 1;
     const createddate = format(new Date(), 'MMMM dd, yyyy pp');
-    const newtask = {id, createdDate:createddate,body:inputValue};
+    const checked = isChecked
+    const newtask = {id, createdDate:createddate,body:inputValue,checked };
     const allTask = [...tasks, newtask]
     setTasks(allTask)
     setInputValue("")
@@ -49,6 +50,9 @@ function App() {
     
     
   }
+  const handleDelete = ()=>{
+
+  }
   return (
     <div className='app'>
       <Header/>
@@ -59,6 +63,7 @@ function App() {
         handleSubmit={handleSubmit}
         handleChecked={handleChecked}
        isChecked={isChecked}
+       handleDelete={handleDelete}
         
       />
       <Footer

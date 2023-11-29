@@ -74,21 +74,29 @@ main ul{
 main ul li{
     margin-bottom: 10px;
 }
-main ul li .bodyandcirlce{
+main ul li .task_body{
     display: flex;
-    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
 }
-main ul li .bodyandcirlce p{
-    font-weight: 500;
+main ul li .task_body .bodyandcircle{
+    display: flex;
+}
+main ul li .task_body .bodyandcircle label{
+    margin-right: 15px;
+    line-height: 30px;
+}
+main ul li .task_body .bodyandcircle .task-item{
     font-size: 20px;
-    margin-left: 10px;
 }
-main ul li .bodyandcirlce input{
-    width: 30px;
-    height: 30px;
-    border-radius: 10px;
-    border: red;
-
+main ul li .task_body .bodyandcircle .task-item.checked{
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+main ul li .task_body .delete{
+    font-size: 30px;
+    transform: rotate(45deg);
+    color: #f875aa;
 }
 main ul li span{
     opacity: 0.6;

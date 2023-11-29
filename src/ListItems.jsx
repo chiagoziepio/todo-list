@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 
 import { FaRegCircle } from "react-icons/fa";
 import { FaRegCircleCheck } from "react-icons/fa6"
-const ListItems = ({task, handleChecked,isChecked}) => {
+const ListItems = ({task, handleChecked,isChecked, handleDelete}) => {
   
     const labelRef = useRef(null)
    
@@ -11,17 +11,18 @@ const ListItems = ({task, handleChecked,isChecked}) => {
        <li key={task.id}>
             
             <span>{task.createdDate}</span>
-            <div className='bodyandcirlce' >
-                <label onClick={()=>handleChecked(task.id)} >{task.checked ? <FaRegCircle/>: <FaRegCircleCheck/> }</label>
-               {/*  <span className="icon"
-                    onClick={handleChecked}
-                >
-                    {isChecked ? <FaRegCircle/>: <FaRegCircleCheck/>}
-                </span> */}
-                <p className="task-body">
+            <div className='task_body' >
+                <div className='bodyandcircle'> 
+                    <label onClick={()=>handleChecked(task.id)} >{task.checked ? <FaRegCircle/>: <FaRegCircleCheck/> }</label>
+               
+                 <p className={task.checked ? "task-item  " :"task-item checked"}>
                    
                     {task.body}
-                </p>
+                 </p>
+                </div>
+
+                <span className='delete' onClick={handleDelete}>+</span>
+               
             </div>
         </li>
     </>

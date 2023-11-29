@@ -1,8 +1,10 @@
 import React from 'react'
 
-const Footer = () => {
+const Footer = ({tasks}) => {
   return (
-    <footer>Footer</footer>
+    <footer>
+      <p>{tasks} task {tasks === 1 ? "item" : "items"}</p>
+    </footer>
   )
 }
 

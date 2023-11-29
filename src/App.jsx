@@ -43,7 +43,9 @@ function App() {
         setInputValue={setInputValue}
         handleSubmit={handleSubmit}
       />
-      <Footer/>
+      <Footer
+        tasks={tasks.length}
+      />
     </div>
   )
 }

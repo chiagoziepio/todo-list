@@ -12,7 +12,8 @@ const Task = ({tasks,inputValue,handleSubmit,setInputValue}) => {
         />
         <ul className="task-ul">
             {tasks.map(task =>(
-                <ListItems 
+                <ListItems
+                  key={task.id} 
                  task={task}
                 />
             ))}

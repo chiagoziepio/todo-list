@@ -2,7 +2,7 @@ import React from 'react'
 import ListItems from './ListItems'
 import Input from './Input'
 
-const Task = ({tasks,inputValue,handleSubmit,setInputValue}) => {
+const Task = ({tasks,inputValue,handleSubmit,setInputValue, handleChecked,isChecked}) => {
   return (
     <main>
         <Input
@@ -15,6 +15,9 @@ const Task = ({tasks,inputValue,handleSubmit,setInputValue}) => {
                 <ListItems
                   key={task.id} 
                  task={task}
+                 handleChecked={handleChecked}
+                 isChecked={isChecked}
+                 
                 />
             ))}
 
